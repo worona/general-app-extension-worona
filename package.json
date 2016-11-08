@@ -1,21 +1,50 @@
 {
-  "name": "package-development-worona",
+  "name": "general-app-extension-worona",
   "version": "1.0.0",
-  "description": "Boilerplate to create Worona packages",
+  "description": "Store the general settings of the app.",
   "scripts": {
     "start": "node node_modules/worona-packages/dist/start.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/worona/package-development-worona.git"
+    "url": "git+https://github.com/worona/general-app-extension-worona.git"
   },
   "keywords": [
+    "app",
+    "settings",
+    "general",
     "worona",
     "package"
   ],
-  "author": "",
+  "author": "Worona Labs SL | Luis Herranz @luisherranz",
   "license": "MIT",
   "devDependencies": {
     "worona-packages": "^1.2.5"
+  },
+  "bugs": {
+    "url": "https://github.com/worona/general-app-extension-worona/issues"
+  },
+  "homepage": "https://github.com/worona/general-app-extension-worona#readme",
+  "worona": {
+    "niceName": "General Settings",
+    "slug": "GeneralAppSettings",
+    "type": "extension",
+    "services": [
+      "dashboard",
+      "app"
+    ],
+    "namespace": "generalApp",
+    "menu": {
+      "category": "Settings",
+      "order": 0
+    },
+    "default": false,
+    "core": false,
+    "listed": true,
+    "deactivable": true,
+    "public": true,
+    "authors": [
+      "Worona Labs SL | Luis Herranz @luisherranz"
+    ]
   }
 }
