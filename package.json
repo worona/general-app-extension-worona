@@ -36,7 +36,7 @@
     "namespace": "generalApp",
     "menu": {
       "category": "Settings",
-      "order": 0
+      "order": 1
     },
     "default": false,
     "core": false,
