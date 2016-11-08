@@ -19,7 +19,7 @@
   "author": "Worona Labs SL | Luis Herranz @luisherranz",
   "license": "MIT",
   "devDependencies": {
-    "worona-packages": "^1.2.5"
+    "worona-packages": "^1.2.6"
   },
   "bugs": {
     "url": "https://github.com/worona/general-app-extension-worona/issues"
