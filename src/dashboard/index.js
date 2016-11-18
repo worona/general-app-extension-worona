@@ -1,11 +1,7 @@
-import React from 'react';
 import * as sagas from './sagas';
-
-const name = 'general-app-extension-worona';
-const namespace = 'generalApp';
+import * as components from './components';
 
 export default {
-  name,
-  namespace,
+  components,
   sagas,
 };
