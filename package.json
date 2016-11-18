@@ -19,7 +19,8 @@
   "author": "Worona Labs SL | Luis Herranz @luisherranz",
   "license": "MIT",
   "devDependencies": {
-    "worona-packages": "1.2.12"
+    "core-dashboard-worona": "1.2.25",
+    "worona-packages": "1.2.13"
   },
   "bugs": {
     "url": "https://github.com/worona/general-app-extension-worona/issues"
