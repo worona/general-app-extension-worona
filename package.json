@@ -36,6 +36,9 @@
     ],
     "namespace": "generalApp",
     "menu": {
+      "services": [
+        "app"
+      ],
       "category": "General",
       "order": 1
     },
