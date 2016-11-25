@@ -1,5 +1,18 @@
 import React from 'react';
+import * as deps from '../../deps';
 
-export default () => (
-  <div>I am the general app extension screen!</div>
+const Content = () => (
+  <div>
+    <h1>General Settings</h1>
+    <div>I am the general settings screen.</div>
+  </div>
 );
+
+export default () => {
+  const RootContainer = deps.elements.RootContainer;
+  return (
+    <RootContainer mobilePreview>
+      <Content />
+    </RootContainer>
+  );
+};
