@@ -19,7 +19,7 @@
   "author": "Worona Labs SL | Luis Herranz @luisherranz",
   "license": "MIT",
   "devDependencies": {
-    "core-app-worona": "1.2.3",
+    "core-app-worona": "1.2.4",
     "core-dashboard-worona": "1.2.27",
     "worona-packages": "1.2.21"
   },
