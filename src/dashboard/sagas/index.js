@@ -1,4 +1,17 @@
-import { fork } from 'redux-saga/effects';
+import { takeEvery } from 'redux-saga';
+import { fork, put } from 'redux-saga/effects';
+import * as deps from '../deps';
+
+export function* saveDefaults(action) {
+  if (action.name === 'general-app-extension-worona') {
+    yield put(deps.actions.saveSettingsRequested({
+      something: 'lalala',
+    }, {
+      name: 'general-app-extension-worona',
+      siteId: action.siteId, // This is optional when editing a site.
+    }));
+  }
+}
 
 function* logSaga() {
   console.log('General App package sagas running!');
@@ -6,6 +19,7 @@ function* logSaga() {
 
 export default function* testSagas() {
   yield [
+    takeEvery(deps.types.DEFAULT_SETTINGS_NEEDED, saveDefaults),
     fork(logSaga),
   ];
 }
