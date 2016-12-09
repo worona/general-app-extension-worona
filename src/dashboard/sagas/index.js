@@ -5,7 +5,8 @@ import * as deps from '../deps';
 export function* saveDefaults(action) {
   if (action.name === 'general-app-extension-worona') {
     yield put(deps.actions.saveSettingsRequested({
-      something: 'lalala',
+      title: 'Worona Demo',
+      numberOfPosts: 10,
     }, {
       name: 'general-app-extension-worona',
       siteId: action.siteId, // This is optional when editing a site.
