@@ -8,6 +8,7 @@ import styles from './style.css';
 let GeneralSettingsForm = ({ handleSubmit, pristine, siteId, waiting }) => {
   const Button = deps.elements.Button;
   const Input = deps.elements.Input;
+  const Select = deps.elements.Select;
   return (
       <form
 
@@ -20,21 +21,12 @@ let GeneralSettingsForm = ({ handleSubmit, pristine, siteId, waiting }) => {
           component={Input}
           type="text"
           size="medium"
-          className={`input is-medium ${styles.title}`}
+          className={`is-medium ${styles.title}`}
         />
 
         <label className="label" htmlFor="postNo">Number of posts</label>
         <p className="control" id="postNo">
-          <span className="select is-medium">
-            <select>
-              <option>5</option>
-              <option selected="selected">10</option>
-              <option>15</option>
-              <option>20</option>
-              <option>25</option>
-              <option>30</option>
-            </select>
-          </span>
+          <Select size="medium" options={[5, 10, 15, 20, 25, 30]} selected={10} />
         </p>
         <br />
         <Button color="primary" size="large">Save</Button>
