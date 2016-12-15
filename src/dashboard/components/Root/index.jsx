@@ -70,7 +70,7 @@ const mapStateToFormProps = state => ({
 GeneralSettingsForm = reduxForm({
   form: 'GeneralSettingsForm',
   fields: ['title', 'numberOfPosts'],
-  getFormState: state => state.generalApp.reduxForm,
+  getFormState: state => state.theme.reduxForm,
   enableReinitialize: true,
 })(GeneralSettingsForm);
 GeneralSettingsForm = connect(mapStateToFormProps)(GeneralSettingsForm);
