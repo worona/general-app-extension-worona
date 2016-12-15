@@ -5,7 +5,8 @@ import * as deps from '../../deps';
 import * as selectors from '../../selectors';
 import styles from './style.css';
 
-let GeneralSettingsForm = ({ handleSubmit, pristine, siteId, waiting }) => {
+
+let GeneralSettingsForm = ({ handleSubmit, pristine, siteId, waiting, initialValues }) => {
   const Button = deps.elements.Button;
   const Input = deps.elements.Input;
   const Select = deps.elements.Select;
@@ -13,7 +14,7 @@ let GeneralSettingsForm = ({ handleSubmit, pristine, siteId, waiting }) => {
     <form
       onSubmit={handleSubmit((values, dispatch) =>
         dispatch(deps.actions.saveSettingsRequested(
-          { title: values.title, postNo: values.postNo },
+          { title: values.title, numberOfPosts: values.numberOfPosts },
           { siteId, name: 'general-app-extension-worona' })))}
     >
       <h1>General Settings</h1>
@@ -27,12 +28,11 @@ let GeneralSettingsForm = ({ handleSubmit, pristine, siteId, waiting }) => {
         className={`is-medium ${styles.title}`}
       />
       <Field
-        name="postNo"
+        name="numberOfPosts"
         label="Number of posts"
         component={Select}
         size="medium"
         options={[5, 10, 15, 20, 25, 30]}
-        selected={10}
       />
       <br />
       <Button
@@ -55,21 +55,21 @@ GeneralSettingsForm.propTypes = {
   pristine: React.PropTypes.bool,
   initialValues: React.PropTypes.shape({
     title: React.PropTypes.string,
-    postNo: React.PropTypes.number,
+    numberOfPosts: React.PropTypes.number,
   }),
 };
 
 const mapStateToFormProps = state => ({
   initialValues: {
     title: selectors.getTitle(state),
-    postNo: selectors.getNumberOfPosts(state),
+    numberOfPosts: selectors.getNumberOfPosts(state),
   },
-  waiting: state.settings.SavingSettings === 'general-app-extension-worona',
+  waiting: state.settings.savingSettings === 'general-app-extension-worona',
 });
 
 GeneralSettingsForm = reduxForm({
   form: 'GeneralSettingsForm',
-  fields: ['title', 'postNo'],
+  fields: ['title', 'numberOfPosts'],
   getFormState: state => state.generalApp.reduxForm,
   enableReinitialize: true,
 })(GeneralSettingsForm);
