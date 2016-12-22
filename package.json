@@ -45,7 +45,7 @@
       "default": true,
       "menu": {
         "app": {
-          "name": "General Settings",
+          "niceName": "General Settings",
           "category": "General",
           "order": 1
         }
