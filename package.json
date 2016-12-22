@@ -34,29 +34,31 @@
   },
   "homepage": "https://github.com/worona/general-app-extension-worona#readme",
   "worona": {
-    "niceName": "General Settings",
-    "slug": "GeneralAppSettings",
-    "type": "extension",
-    "services": [
-      "dashboard",
-      "app"
-    ],
-    "namespace": "generalApp",
-    "menu": {
-      "services": [
-        "app"
-      ],
-      "category": "General",
-      "order": 1
-    },
-    "default": false,
-    "core": false,
-    "listed": true,
-    "deactivable": true,
-    "public": true,
     "authors": [
       "luis@worona.org",
       "abel@worona.org"
-    ]
+    ],
+    "private": false,
+    "dashboard": {
+      "type": "extension",
+      "namespace": "generalApp",
+      "default": true,
+      "menu": {
+        "app": {
+          "name": "General Settings",
+          "category": "General",
+          "order": 1
+        }
+      }
+    },
+    "app": {
+      "type": "extension",
+      "namespace": "generalApp",
+      "default": true,
+      "name": "General Settings",
+      "description": "Package to store the general settings of a Worona app.",
+      "image": "",
+      "listed": false
+    }
   }
 }
