@@ -17,7 +17,6 @@ let GeneralSettingsForm = ({ handleSubmit, pristine, siteId, waiting, initialVal
           { title: values.title, numberOfPosts: values.numberOfPosts },
           { siteId, name: 'general-app-extension-worona' })))}
     >
-      <h1>General Settings</h1>
 
       <Field
         name="title"
@@ -79,6 +78,8 @@ export default () => {
   const RootContainer = deps.elements.RootContainer;
   return (
     <RootContainer mobilePreview>
+      <h1>General Settings</h1>
+      <hr />
       <GeneralSettingsForm />
     </RootContainer>
   );
