@@ -40,15 +40,13 @@
       "luis@worona.org",
       "abel@worona.org"
     ],
-    "private": false,
     "dashboard": {
       "type": "extension",
       "namespace": "generalApp",
-      "default": true,
       "menu": {
         "app": {
-          "niceName": "General Settings",
-          "category": "General",
+          "niceName": "General",
+          "category": "Settings",
           "order": 1
         }
       }
@@ -56,7 +54,6 @@
     "app": {
       "type": "extension",
       "namespace": "generalApp",
-      "default": true,
       "name": "General Settings",
       "description": "Package to store the general settings of a Worona app.",
       "image": "",
