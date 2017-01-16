@@ -1,11 +1,14 @@
-import { fork } from 'redux-saga/effects';
+import { takeEvery } from 'redux-saga';
+import { put } from 'redux-saga/effects';
+import * as deps from '../deps';
 
-function* logSaga() {
-  console.log('General app extension saga running!');
-}
-
-export default function* testSagas() {
+export default function* generalAppSagas() {
   yield [
-    fork(logSaga),
+    takeEvery(
+      ({ type, fields }) => type === deps.types.SETTINGS_UPDATED && fields.numberOfPosts,
+      function*({ fields: { numberOfPosts } }) {
+        yield put(deps.actions.postParamsChanged({ params: { per_page: numberOfPosts } }));
+      },
+    ),
   ];
 }
