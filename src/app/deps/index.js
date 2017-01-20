@@ -9,6 +9,6 @@ export const selectorCreators = {
 };
 
 export const actions = {
-  get postParamsChanged() { return dep('connection', 'actions', 'postParamsChanged'); },
+  get postsParamsChanged() { return dep('connection', 'actions', 'postsParamsChanged'); },
   get refreshPostsRequested() { return dep('connection', 'actions', 'refreshPostsRequested'); },
 };
