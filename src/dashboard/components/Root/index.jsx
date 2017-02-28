@@ -1,12 +1,12 @@
+/* eslint-disable react/no-unused-prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import * as deps from '../../deps';
-import * as selectors from '../../selectors';
 import styles from './style.css';
 
 
-let GeneralSettingsForm = ({ handleSubmit, pristine, siteId, waiting, initialValues }) => {
+let GeneralSettingsForm = ({ handleSubmit, pristine, siteId, waiting }) => {
   const Button = deps.elements.Button;
   const Input = deps.elements.Input;
   const Select = deps.elements.Select;
@@ -17,7 +17,6 @@ let GeneralSettingsForm = ({ handleSubmit, pristine, siteId, waiting, initialVal
           { title: values.title, numberOfPosts: values.numberOfPosts },
           { siteId, name: 'general-app-extension-worona' })))}
     >
-
       <Field
         name="title"
         label="Title"
@@ -60,10 +59,10 @@ GeneralSettingsForm.propTypes = {
 
 const mapStateToFormProps = state => ({
   initialValues: {
-    title: selectors.getTitle(state),
-    numberOfPosts: selectors.getNumberOfPosts(state),
+    title: deps.selectorCreators.getSetting('generalApp', 'title')(state),
+    numberOfPosts: deps.selectorCreators.getSetting('generalApp', 'numberOfPosts')(state),
   },
-  waiting: state.settings.savingSettings === 'general-app-extension-worona',
+  waiting: deps.selectors.getSavingSettings(state) === 'general-app-extension-worona',
 });
 
 GeneralSettingsForm = reduxForm({

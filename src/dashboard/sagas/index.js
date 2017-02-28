@@ -7,7 +7,7 @@ export function* saveDefaults(action) {
   const site = yield select(deps.selectors.getSite(siteId));
   yield put(deps.actions.saveSettingsRequested({
     title: site.name,
-    numberOfPosts: 10,
+    numberOfPosts: 5,
   }, {
     name: 'general-app-extension-worona',
     siteId,

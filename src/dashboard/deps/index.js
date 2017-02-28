@@ -12,7 +12,7 @@ export const actions = {
 };
 
 export const selectorCreators = {
-  get getSettingCreator() { return dep('settings', 'selectorCreators', 'getSettingCreator'); },
+  get getSetting() { return dep('settings', 'selectorCreators', 'getSetting'); },
 };
 
 export const types = {
@@ -21,4 +21,5 @@ export const types = {
 
 export const selectors = {
   get getSite() { return dep('sites', 'selectors', 'getSite'); },
+  get getSavingSettings() { return dep('settings', 'selectors', 'getSavingSettings'); },
 };
