@@ -53,7 +53,7 @@ GeneralSettingsForm.propTypes = {
   pristine: React.PropTypes.bool,
   initialValues: React.PropTypes.shape({
     title: React.PropTypes.string,
-    numberOfPosts: React.PropTypes.string,
+    numberOfPosts: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.string]),
   }),
 };
 
