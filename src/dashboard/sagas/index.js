@@ -4,7 +4,7 @@ import * as deps from '../deps';
 
 export function* saveDefaults(action) {
   const { siteId } = action;
-  const site = yield select(deps.selectors.getSite(siteId));
+  const site = yield select(deps.selectorCreators.getSite(siteId));
   yield put(deps.actions.saveSettingsRequested({
     title: site.name,
     numberOfPosts: 5,
